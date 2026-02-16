@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useRef } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -24,6 +24,8 @@ const projects = [
 
 export function PortfolioSection() {
   const [current, setCurrent] = useState(0)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   const prev = useCallback(() => {
     setCurrent((c) => (c === 0 ? projects.length - 1 : c - 1))
@@ -32,6 +34,22 @@ export function PortfolioSection() {
   const next = useCallback(() => {
     setCurrent((c) => (c === projects.length - 1 ? 0 : c + 1))
   }, [])
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }, [])
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }, [])
+
+  const onTouchEnd = useCallback(() => {
+    const diff = touchStartX.current - touchEndX.current
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) next()
+      else prev()
+    }
+  }, [next, prev])
 
   return (
     <section className="py-16 md:py-24 px-5 md:px-10 bg-background">
@@ -43,7 +61,12 @@ export function PortfolioSection() {
         {/* Card */}
         <div>
           {/* Image */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div
+            className="relative aspect-[4/3] overflow-hidden rounded-2xl touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <Image
               src={projects[current].image}
               alt={projects[current].title}
