@@ -22,6 +22,18 @@ const projects = [
     description:
       "Участок 15 соток. Подпорные стены из бетона, встроенное освещение, зоны отдыха на каждом уровне.",
   },
+  {
+    image: "/images/project-4.jpg",
+    title: "Благоустройство с зоной отдыха",
+    description:
+      "Участок 10 соток. Мощёные дорожки, зона барбекю с перголой, декоративный гравий и субтропические посадки.",
+  },
+  {
+    image: "/images/project-5.jpg",
+    title: "Автополив и озеленение нового участка",
+    description:
+      "Участок 18 соток, перепад 4 м. Автоматический полив, террасный газон, подпорные стены, LED-освещение дорожек.",
+  },
 ]
 
 export function PortfolioSection() {
@@ -55,7 +67,7 @@ export function PortfolioSection() {
   }, [next, prev])
 
   return (
-    <section className="py-16 md:py-24 px-5 md:px-10 bg-background">
+    <section className="pt-6 pb-16 md:pt-8 md:pb-24 px-5 md:px-10 bg-background">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-10">
           Наши проекты
