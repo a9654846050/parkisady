@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/hero-section"
-import { WhyUsSection } from "@/components/why-us-section"
 import { WhatsIncludedSection } from "@/components/whats-included-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { ProcessSection } from "@/components/process-section"
@@ -12,7 +11,6 @@ export default function Page() {
     <>
       <main className="pb-14">
         <HeroSection />
-        <WhyUsSection />
         <WhatsIncludedSection />
         <PortfolioSection />
         <ProcessSection />
