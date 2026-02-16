@@ -32,7 +32,7 @@ export function HeroSection() {
 
         <nav aria-label="Связаться с нами" className="flex items-center gap-3 pt-1 md:pt-2">
           <a
-            href="tel:+78622000000"
+            href="tel:+79654846050"
             aria-label="Позвонить"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm transition-colors hover:bg-[#F4C430]/30"
           >
@@ -41,7 +41,7 @@ export function HeroSection() {
             </svg>
           </a>
           <a
-            href="https://wa.me/78622000000"
+            href="https://wa.me/79654846050"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в WhatsApp"
@@ -52,7 +52,7 @@ export function HeroSection() {
             </svg>
           </a>
           <a
-            href="https://t.me/example"
+            href="https://t.me/parkisady"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в Telegram"
@@ -63,7 +63,7 @@ export function HeroSection() {
             </svg>
           </a>
           <a
-            href="https://vk.me/example"
+            href="https://vk.me/parkisady"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в Max Messenger"

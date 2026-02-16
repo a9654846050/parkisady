@@ -8,11 +8,40 @@ export function SiteFooter() {
           {/* Company */}
           <div>
             <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">
-              ЛандПроект Сочи
+              {'ООО "Парки и Сады", г. Сочи'}
             </h3>
             <p className="text-sm leading-relaxed">
-              Ландшафтный дизайн и инженерия для участков со сложным рельефом в Сочи и Краснодарском крае
+              ИНН 2367023503
             </p>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">Контакты</h3>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li>
+                <a
+                  href="tel:+79654846050"
+                  className="inline-flex items-center gap-2 hover:text-[#F4C430] transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  +7 965 484 6050
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@parkisady.ru"
+                  className="inline-flex items-center gap-2 hover:text-[#F4C430] transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  info@parkisady.ru
+                </a>
+              </li>
+              <li className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 shrink-0" />
+                <span>г. Сочи, Краснодарский край</span>
+              </li>
+            </ul>
           </div>
 
           {/* Contact */}
@@ -103,7 +132,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-[#f5f0e8]/10 text-xs text-[#c8c3b8]/60 text-center">
-          {"© 2026 ЛандПроект Сочи. Все права защищены."}
+          {'© 2026 ООО "Парки и Сады". Все права защищены.'}
         </div>
       </div>
     </footer>

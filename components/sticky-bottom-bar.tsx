@@ -30,7 +30,7 @@ export function StickyBottomBar() {
       >
         {/* Позвонить */}
         <a
-          href="tel:+78622000000"
+          href="tel:+79654846050"
           className="flex flex-col items-center gap-1 text-[#E8EEF0] hover:text-[#F4C430] transition-colors"
         >
           <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
@@ -41,7 +41,7 @@ export function StickyBottomBar() {
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/78622000000"
+          href="https://wa.me/79654846050"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 text-[#E8EEF0] hover:text-[#F4C430] transition-colors"
@@ -54,7 +54,7 @@ export function StickyBottomBar() {
 
         {/* Telegram */}
         <a
-          href="https://t.me/example"
+          href="https://t.me/parkisady"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 text-[#E8EEF0] hover:text-[#F4C430] transition-colors"
@@ -67,7 +67,7 @@ export function StickyBottomBar() {
 
         {/* MAX */}
         <a
-          href="https://vk.me/example"
+          href="https://vk.me/parkisady"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 text-[#E8EEF0] hover:text-[#F4C430] transition-colors"

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Send, MessageCircle } from "lucide-react"
+import { Send } from "lucide-react"
 
 export function ContactFormSection() {
   const [name, setName] = useState("")
@@ -17,17 +17,17 @@ export function ContactFormSection() {
   return (
     <section id="contact-form" className="py-16 md:py-24 px-4 bg-background">
       <div className="max-w-lg mx-auto">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-foreground mb-4 text-balance">
-          {"Проект готов к маю\u00a0\u2014 успеете построить за сезон"}
+        <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+          Оставьте заявку
         </h2>
-        <p className="text-muted-foreground text-center mb-10">
-          Оставьте заявку и мы свяжемся с вами в течение дня
+        <p className="text-muted-foreground mb-10">
+          Напишем в мессенджер, не будем отвлекать звонками.
         </p>
 
         {submitted ? (
-          <div className="rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-              <Send className="h-6 w-6 text-primary" />
+          <div className="rounded-xl border border-[#5B8B8E]/30 bg-[#5B8B8E]/5 p-8 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#5B8B8E]/10">
+              <Send className="h-6 w-6 text-[#5B8B8E]" />
             </div>
             <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
               Заявка отправлена
@@ -68,34 +68,13 @@ export function ContactFormSection() {
             </div>
             <button
               type="submit"
-              className="mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2"
             >
               <Send className="h-4 w-4" />
-              Заказать выезд
+              Напишите мне
             </button>
           </form>
         )}
-
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <a
-            href="https://wa.me/78622000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-medium text-card-foreground hover:bg-muted transition-colors"
-          >
-            <MessageCircle className="h-4 w-4 text-primary" />
-            WhatsApp
-          </a>
-          <a
-            href="https://t.me/example"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-medium text-card-foreground hover:bg-muted transition-colors"
-          >
-            <Send className="h-4 w-4 text-primary" />
-            Telegram
-          </a>
-        </div>
       </div>
     </section>
   )
