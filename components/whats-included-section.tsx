@@ -25,7 +25,7 @@ export function WhatsIncludedSection() {
     <section className="py-16 md:py-24 px-4 bg-card">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-card-foreground mb-4">
-          Что входит в проект
+          Что входит в проект:
         </h2>
         <p className="text-muted-foreground mb-10">
           Полный комплект документации для начала строительства
