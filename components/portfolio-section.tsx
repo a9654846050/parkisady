@@ -7,15 +7,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const projects = [
   {
     image: "/images/project-1.jpg",
-    description: "Участок 12 соток, уклон 12\u00b0, терраса + дренаж",
+    title: "Террасирование участка на склоне",
+    description: "Участок 12 соток, уклон 12\u00b0. Каменные подпорные стены, интегрированный дренаж, газон между террасами.",
   },
   {
     image: "/images/project-2.jpg",
-    description: "Участок 8 соток, перепад 6 м, полный цикл инженерии",
+    title: "Инженерные системы под ключ",
+    description: "Участок 8 соток, перепад 6 м. Полный цикл: ливневка, дренаж, подпорные стены, освещение.",
   },
   {
     image: "/images/project-3.jpg",
-    description: "Участок 15 соток, подпорные стены + освещение",
+    title: "Многоуровневый сад с подсветкой",
+    description: "Участок 15 соток. Подпорные стены из бетона, встроенное освещение, зоны отдыха на каждом уровне.",
   },
 ]
 
@@ -31,82 +34,56 @@ export function PortfolioSection() {
   }, [])
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-background">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-foreground mb-4">
+    <section className="py-16 md:py-24 px-5 md:px-10 bg-background">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-10">
           Наши проекты
         </h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-          Реализованные объекты в Сочи и Краснодарском крае
-        </p>
 
-        {/* Mobile carousel */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden rounded-xl">
-            <div className="relative aspect-[4/3]">
-              <Image
-                src={projects[current].image}
-                alt={projects[current].description}
-                fill
-                className="object-cover"
-                sizes="100vw"
-              />
-            </div>
-            <div className="bg-card p-4">
-              <p className="text-sm text-card-foreground">{projects[current].description}</p>
-            </div>
+        {/* Card */}
+        <div>
+          {/* Image */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src={projects[current].image}
+              alt={projects[current].title}
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 768px, 100vw"
+            />
           </div>
-          <div className="flex items-center justify-between mt-4">
+
+          {/* Navigation: arrows + counter */}
+          <div className="flex items-center justify-center gap-6 py-5">
             <button
               onClick={prev}
               aria-label="Предыдущий проект"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-card-foreground hover:bg-muted transition-colors"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 hover:text-foreground transition-colors"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-6 w-6" strokeWidth={1.5} />
             </button>
-            <div className="flex gap-2">
-              {projects.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  aria-label={`Проект ${i + 1}`}
-                  className={`h-2 w-2 rounded-full transition-colors ${
-                    i === current ? "bg-primary" : "bg-border"
-                  }`}
-                />
-              ))}
-            </div>
+            <span className="text-sm text-foreground tabular-nums tracking-wide">
+              <span className="font-semibold text-foreground">{current + 1}</span>
+              <span className="text-muted-foreground">{"/"}{projects.length}</span>
+            </span>
             <button
               onClick={next}
               aria-label="Следующий проект"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-card-foreground hover:bg-muted transition-colors"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 hover:text-foreground transition-colors"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" strokeWidth={1.5} />
             </button>
           </div>
-        </div>
 
-        {/* Desktop grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.description}
-              className="group rounded-xl overflow-hidden border border-border bg-card transition-shadow hover:shadow-lg"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.description}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </div>
-              <div className="p-4">
-                <p className="text-sm text-card-foreground">{project.description}</p>
-              </div>
-            </div>
-          ))}
+          {/* Title + Description */}
+          <div>
+            <h3 className="font-serif text-lg md:text-xl font-bold text-foreground uppercase tracking-wide mb-2">
+              {projects[current].title}
+            </h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              {projects[current].description}
+            </p>
+          </div>
         </div>
       </div>
     </section>
