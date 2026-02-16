@@ -80,19 +80,15 @@ export function HeroSection() {
           <ul className="flex flex-col gap-3 text-sm md:text-base text-[#E8EEF0] leading-relaxed max-w-xl mb-10">
             <li className="flex items-start gap-2.5">
               <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
-              Специализируемся на сложном рельефе, знаем все про сочинскую ливневку и дренаж — чтобы не поплыло
+              Специализируемся на сложном рельефе
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
-              {'На картинках — то что можно построить, а не просто «красиво»'}
+              Знаем все про ливневку и дренаж
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
-              Знаем все местные растения — минимальный уход и оптимальный бюджет
-            </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
-              Согласование онлайн: план/3D/материалы — в мессенджере и созвонах
+              {'Умеем в стройку а не просто в картинки'}
             </li>
           </ul>
 
