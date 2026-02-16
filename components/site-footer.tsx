@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-[#1a2e1a] text-[#c8c3b8] py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Company */}
           <div>
             <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">
@@ -35,35 +35,6 @@ export function SiteFooter() {
                 >
                   <Mail className="h-4 w-4" />
                   info@parkisady.ru
-                </a>
-              </li>
-              <li className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4 shrink-0" />
-                <span>г. Сочи, Краснодарский край</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">Контакты</h3>
-            <ul className="flex flex-col gap-3 text-sm">
-              <li>
-                <a
-                  href="tel:+78622000000"
-                  className="inline-flex items-center gap-2 hover:text-[#f5f0e8] transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  +7 (862) 200-00-00
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@landproject-sochi.ru"
-                  className="inline-flex items-center gap-2 hover:text-[#f5f0e8] transition-colors"
-                >
-                  <Mail className="h-4 w-4" />
-                  info@landproject-sochi.ru
                 </a>
               </li>
               <li className="inline-flex items-center gap-2">
