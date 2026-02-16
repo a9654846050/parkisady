@@ -6,7 +6,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden pt-16 md:pt-[72px]">
+    <section className="relative min-h-screen flex flex-col overflow-hidden pt-24 md:pt-28">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
