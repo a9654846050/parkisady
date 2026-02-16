@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/hero-section"
 import { WhatsIncludedSection } from "@/components/whats-included-section"
 import { RemoteWorkSection } from "@/components/remote-work-section"
 import { PortfolioSection } from "@/components/portfolio-section"
+import { ObjectsSection } from "@/components/objects-section"
 import { ProcessSection } from "@/components/process-section"
 import { ContactFormSection } from "@/components/contact-form-section"
 import { SiteFooter } from "@/components/site-footer"
@@ -15,6 +16,7 @@ export default function Page() {
         <WhatsIncludedSection />
         <RemoteWorkSection />
         <PortfolioSection />
+        <ObjectsSection />
         <ProcessSection />
         <ContactFormSection />
         <SiteFooter />
