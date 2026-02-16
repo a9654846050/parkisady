@@ -15,11 +15,11 @@ export default function Page() {
       <main className="pb-14">
         <HeroSection />
         <WhatsIncludedSection />
-        <RemoteWorkSection />
         <PortfolioSection />
+        <WhyCallSection />
+        <RemoteWorkSection />
         <ObjectsSection />
         <ProcessSection />
-        <WhyCallSection />
         <ContactFormSection />
         <SiteFooter />
       </main>
