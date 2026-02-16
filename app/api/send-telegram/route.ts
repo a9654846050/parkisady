@@ -39,15 +39,30 @@ export async function POST(request: Request) {
     })
 
     if (!response.ok) {
-      const error = await response.text()
-      console.error('[v0] Telegram API error:', error)
-      throw new Error('Failed to send message to Telegram')
+      const errorText = await response.text()
+      console.error('[v0] Telegram API error (status ' + response.status + '):', errorText)
+      
+      let errorMessage = 'Failed to send message to Telegram'
+      try {
+        const errorJson = JSON.parse(errorText)
+        errorMessage = errorJson.description || errorMessage
+      } catch (e) {
+        // ignore JSON parse error
+      }
+      
+      return Response.json({ 
+        error: errorMessage,
+        details: errorText 
+      }, { status: 500 })
     }
 
     console.log('[v0] Message sent successfully')
     return Response.json({ success: true })
   } catch (error) {
     console.error('[v0] Error sending to Telegram:', error)
-    return Response.json({ error: 'Failed to send message' }, { status: 500 })
+    return Response.json({ 
+      error: 'Failed to send message',
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 })
   }
 }
