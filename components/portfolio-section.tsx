@@ -81,7 +81,7 @@ export function PortfolioSection() {
           onTouchEnd={onTouchEnd}
         >
           {/* Image with counter notch */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div className="relative aspect-[10/9] overflow-hidden rounded-2xl">
             <Image
               src={projects[current].image}
               alt={projects[current].title}
