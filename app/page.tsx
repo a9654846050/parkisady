@@ -4,6 +4,7 @@ import { RemoteWorkSection } from "@/components/remote-work-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { ObjectsSection } from "@/components/objects-section"
 import { ProcessSection } from "@/components/process-section"
+import { WhyCallSection } from "@/components/why-call-section"
 import { ContactFormSection } from "@/components/contact-form-section"
 import { SiteFooter } from "@/components/site-footer"
 import { StickyBottomBar } from "@/components/sticky-bottom-bar"
@@ -18,6 +19,7 @@ export default function Page() {
         <PortfolioSection />
         <ObjectsSection />
         <ProcessSection />
+        <WhyCallSection />
         <ContactFormSection />
         <SiteFooter />
       </main>
