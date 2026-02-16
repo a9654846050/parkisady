@@ -1,3 +1,4 @@
+import { StickyHeader } from "@/components/sticky-header"
 import { HeroSection } from "@/components/hero-section"
 import { WhyUsSection } from "@/components/why-us-section"
 import { WhatsIncludedSection } from "@/components/whats-included-section"
@@ -5,12 +6,12 @@ import { PortfolioSection } from "@/components/portfolio-section"
 import { ProcessSection } from "@/components/process-section"
 import { ContactFormSection } from "@/components/contact-form-section"
 import { SiteFooter } from "@/components/site-footer"
-import { StickyBottomBar } from "@/components/sticky-bottom-bar"
 
 export default function Page() {
   return (
     <>
-      <main className="pb-16">
+      <StickyHeader />
+      <main>
         <HeroSection />
         <WhyUsSection />
         <WhatsIncludedSection />
@@ -19,7 +20,6 @@ export default function Page() {
         <ContactFormSection />
         <SiteFooter />
       </main>
-      <StickyBottomBar />
     </>
   )
 }
