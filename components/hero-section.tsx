@@ -72,16 +72,16 @@ export function HeroSection() {
       </header>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-1 items-center justify-center px-4 py-16">
-        <div className="text-center max-w-3xl mx-auto">
+      <div className="relative z-10 flex flex-1 items-end px-5 pb-16 md:items-center md:px-10 md:pb-0">
+        <div className="max-w-2xl">
           <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-[#F5EDD6] leading-tight text-balance mb-6">
-            Получите проект участка к началу строительного сезона
+            Сделаем ландшафтный проект вашего участка в Сочи к лету
           </h1>
-          <p className="text-base md:text-lg text-[#E8EEF0] leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-base md:text-lg text-[#E8EEF0] leading-relaxed max-w-xl mb-10">
             Специализируемся на сложных задачах: террасирование склонов, дренажные системы, коммуникации
           </p>
 
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-start gap-4">
             <button
               onClick={scrollToForm}
               className="font-serif inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2"
