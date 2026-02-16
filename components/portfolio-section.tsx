@@ -2,23 +2,25 @@
 
 import { useState, useCallback, useRef } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
     image: "/images/project-1.jpg",
     title: "Террасирование участка на склоне",
-    description: "Участок 12 соток, уклон 12\u00b0. Каменные подпорные стены, интегрированный дренаж, газон между террасами.",
+    description:
+      "Участок 12 соток, уклон 12\u00b0. Каменные подпорные стены, интегрированный дренаж, газон между террасами.",
   },
   {
     image: "/images/project-2.jpg",
     title: "Инженерные системы под ключ",
-    description: "Участок 8 соток, перепад 6 м. Полный цикл: ливневка, дренаж, подпорные стены, освещение.",
+    description:
+      "Участок 8 соток, перепад 6 м. Полный цикл: ливневка, дренаж, подпорные стены, освещение.",
   },
   {
     image: "/images/project-3.jpg",
     title: "Многоуровневый сад с подсветкой",
-    description: "Участок 15 соток. Подпорные стены из бетона, встроенное освещение, зоны отдыха на каждом уровне.",
+    description:
+      "Участок 15 соток. Подпорные стены из бетона, встроенное освещение, зоны отдыха на каждом уровне.",
   },
 ]
 
@@ -37,6 +39,7 @@ export function PortfolioSection() {
 
   const onTouchStart = useCallback((e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
+    touchEndX.current = e.touches[0].clientX
   }, [])
 
   const onTouchMove = useCallback((e: React.TouchEvent) => {
@@ -58,48 +61,47 @@ export function PortfolioSection() {
           Наши проекты
         </h2>
 
-        {/* Card */}
-        <div>
-          {/* Image */}
-          <div
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl touch-pan-y"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
+        {/* Swipeable card */}
+        <div
+          className="select-none touch-pan-y"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {/* Image with counter notch */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
               src={projects[current].image}
               alt={projects[current].title}
               fill
               className="object-cover"
               sizes="(min-width: 768px) 768px, 100vw"
+              draggable={false}
             />
-          </div>
 
-          {/* Navigation: arrows + counter */}
-          <div className="flex items-center justify-center gap-6 py-5">
-            <button
-              onClick={prev}
-              aria-label="Предыдущий проект"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <ChevronLeft className="h-6 w-6" strokeWidth={1.5} />
-            </button>
-            <span className="text-sm text-foreground tabular-nums tracking-wide">
-              <span className="font-semibold text-foreground">{current + 1}</span>
-              <span className="text-muted-foreground">{"/"}{projects.length}</span>
-            </span>
-            <button
-              onClick={next}
-              aria-label="Следующий проект"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <ChevronRight className="h-6 w-6" strokeWidth={1.5} />
-            </button>
+            {/* Counter notch in bottom-right */}
+            <div className="absolute bottom-0 right-0 flex items-center">
+              {/* Curved cutout shape */}
+              <div className="relative flex items-center gap-1.5 bg-background pl-5 pr-4 pt-3 pb-1.5 rounded-tl-2xl">
+                {/* Decorative curve connectors */}
+                <div className="absolute -left-4 bottom-0 h-4 w-4 bg-transparent">
+                  <div className="h-full w-full rounded-br-2xl bg-background shadow-[4px_0_0_0_hsl(var(--background))]" />
+                </div>
+                <div className="absolute -top-4 right-0 h-4 w-4 bg-transparent">
+                  <div className="h-full w-full rounded-br-2xl bg-background shadow-[4px_0_0_0_hsl(var(--background))]" />
+                </div>
+                <span className="text-sm font-semibold text-foreground tabular-nums">
+                  {current + 1}
+                </span>
+                <span className="text-sm text-muted-foreground tabular-nums">
+                  {"/"}{projects.length}
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Title + Description */}
-          <div>
+          <div className="mt-5">
             <h3 className="font-serif text-lg md:text-xl font-bold text-foreground uppercase tracking-wide mb-2">
               {projects[current].title}
             </h3>
