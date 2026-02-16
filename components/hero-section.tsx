@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { Phone } from "lucide-react"
 
 export function HeroSection() {
   const scrollToForm = () => {
@@ -92,21 +91,12 @@ export function HeroSection() {
             </li>
           </ul>
 
-          <div className="flex flex-col items-start gap-4">
-            <button
-              onClick={scrollToForm}
-              className="font-serif inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2"
-            >
-              Заказать проект
-            </button>
-            <a
-              href="tel:+78622000000"
-              className="inline-flex items-center gap-2 text-[#E8EEF0] hover:text-[#F5EDD6] transition-colors text-sm"
-            >
-              <Phone className="h-4 w-4" />
-              +7 (862) 200-00-00
-            </a>
-          </div>
+          <button
+            onClick={scrollToForm}
+            className="font-serif inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2"
+          >
+            Уточнить детали
+          </button>
         </div>
       </div>
     </section>
