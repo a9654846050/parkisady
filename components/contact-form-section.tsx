@@ -13,9 +13,11 @@ export function ContactFormSection() {
     e.preventDefault()
     if (!name.trim() || !phone.trim()) return
 
+    console.log('[v0] Form submit started', { name, phone })
     setIsSubmitting(true)
 
     try {
+      console.log('[v0] Sending request to /api/send-telegram')
       const response = await fetch('/api/send-telegram', {
         method: 'POST',
         headers: {
@@ -24,10 +26,15 @@ export function ContactFormSection() {
         body: JSON.stringify({ name, phone }),
       })
 
+      console.log('[v0] Response status:', response.status)
+      
       if (!response.ok) {
+        const errorData = await response.json()
+        console.error('[v0] API error:', errorData)
         throw new Error('Failed to send')
       }
 
+      console.log('[v0] Form submitted successfully')
       setSubmitted(true)
     } catch (error) {
       console.error('[v0] Form submission error:', error)
