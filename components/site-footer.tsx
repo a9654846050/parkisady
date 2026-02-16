@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold text-[#f5f0e8] mb-3">
+            <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">
               ЛандПроект Сочи
             </h3>
             <p className="text-sm leading-relaxed">
@@ -17,7 +17,7 @@ export function SiteFooter() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-[#f5f0e8] mb-3">Контакты</h3>
+            <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">Контакты</h3>
             <ul className="flex flex-col gap-3 text-sm">
               <li>
                 <a
@@ -46,7 +46,7 @@ export function SiteFooter() {
 
           {/* Social */}
           <div>
-            <h3 className="text-lg font-semibold text-[#f5f0e8] mb-3">
+            <h3 className="font-serif text-lg font-semibold text-[#F5EDD6] mb-3">
               Мы в соцсетях
             </h3>
             <div className="flex gap-3">

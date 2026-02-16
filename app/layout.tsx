@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat, Manrope } from 'next/font/google'
 
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-inter' })
+const montserrat = Montserrat({ subsets: ['latin', 'cyrillic'], variable: '--font-montserrat', weight: ['600', '700', '800'] })
+const manrope = Manrope({ subsets: ['latin', 'cyrillic'], variable: '--font-manrope' })
 
 export const metadata: Metadata = {
   title: 'Ландшафтный дизайн и инженерия в Сочи — Проект участка под ключ',
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${manrope.variable} ${montserrat.variable} font-sans antialiased`}>{children}</body>
     </html>
   )
 }

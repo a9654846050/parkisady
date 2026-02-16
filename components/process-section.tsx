@@ -29,7 +29,7 @@ export function ProcessSection() {
   return (
     <section className="py-16 md:py-24 px-4 bg-card">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-card-foreground mb-4">
+        <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-card-foreground mb-4">
           Как мы работаем
         </h2>
         <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
@@ -46,7 +46,7 @@ export function ProcessSection() {
                 {step.number}
               </span>
               <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-semibold text-foreground mb-1">
+                <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
                   {step.title}
                 </h3>
                 <span className="inline-block text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-2">

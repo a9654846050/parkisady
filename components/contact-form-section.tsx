@@ -17,7 +17,7 @@ export function ContactFormSection() {
   return (
     <section id="contact-form" className="py-16 md:py-24 px-4 bg-background">
       <div className="max-w-lg mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-foreground mb-4 text-balance">
+        <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-foreground mb-4 text-balance">
           {"Проект готов к маю\u00a0\u2014 успеете построить за сезон"}
         </h2>
         <p className="text-muted-foreground text-center mb-10">
@@ -29,7 +29,7 @@ export function ContactFormSection() {
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
               <Send className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">
+            <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
               Заявка отправлена
             </h3>
             <p className="text-sm text-muted-foreground">
