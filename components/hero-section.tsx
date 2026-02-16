@@ -77,9 +77,24 @@ export function HeroSection() {
           <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-[#F5EDD6] leading-tight text-balance mb-6">
             Сделаем ландшафтный проект вашего участка в Сочи к лету
           </h1>
-          <p className="text-base md:text-lg text-[#E8EEF0] leading-relaxed max-w-xl mb-10">
-            Специализируемся на сложных задачах: террасирование склонов, дренажные системы, коммуникации
-          </p>
+          <ul className="flex flex-col gap-3 text-sm md:text-base text-[#E8EEF0] leading-relaxed max-w-xl mb-10">
+            <li className="flex items-start gap-2.5">
+              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
+              Специализируемся на сложном рельефе, знаем все про сочинскую ливневку и дренаж — чтобы не поплыло
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
+              {'На картинках — то что можно построить, а не просто «красиво»'}
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
+              Знаем все местные растения — минимальный уход и оптимальный бюджет
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#F4C430]" />
+              Согласование онлайн: план/3D/материалы — в мессенджере и созвонах
+            </li>
+          </ul>
 
           <div className="flex flex-col items-start gap-4">
             <button
