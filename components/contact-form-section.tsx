@@ -7,11 +7,34 @@ export function ContactFormSection() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!name.trim() || !phone.trim()) return
-    setSubmitted(true)
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, phone }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      console.error('[v0] Form submission error:', error)
+      alert('Не удалось отправить заявку. Попробуйте позже или свяжитесь по телефону.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -68,10 +91,11 @@ export function ContactFormSection() {
             </div>
             <button
               type="submit"
-              className="mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2"
+              disabled={isSubmitting}
+              className="mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="h-4 w-4" />
-              Напишите мне
+              {isSubmitting ? 'Отправка...' : 'Напишите мне'}
             </button>
           </form>
         )}
