@@ -71,7 +71,7 @@ export function HeroSection() {
       </header>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-1 items-end px-5 pb-16 md:items-center md:px-10 md:pb-0">
+      <div className="relative z-10 flex flex-1 items-center px-5 md:px-10">
         <div className="max-w-2xl">
           <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-[#F5EDD6] leading-tight text-balance mb-6">
             Сделаем ландшафтный проект вашего участка в Сочи к лету
