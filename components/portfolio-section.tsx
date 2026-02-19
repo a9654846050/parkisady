@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
-    image: "/images/project-1.jpg",
+    image: "/images/slide1-2.jpg",
     title: "Проект в Липниках",
     description:
       "10 соток, перепад высот 6 метров. Полный комплект чертежей и визуализация.",
