@@ -6,31 +6,31 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
-    image: "/images/slide1-2.jpg",
+    image: "/images/slide1-1.jpg",
     title: "Проект в Липниках",
     description:
       "10 соток, перепад высот 6 метров. Полный комплект чертежей и визуализация.",
   },
   {
-    image: "/images/slide1-3-2.jpg",
+    image: "/images/slide1-2.jpg",
     title: "Проект на Космической",
     description:
       "20 соток, перепад высот 16 метров, расположили летнюю кухню, террасы и бассейн.",
   },
   {
-    image: "/images/slide1-4-2.jpg",
+    image: "/images/slide1-3.jpg",
     title: "Проект на Ландышевой",
     description:
       "5,5 соток, перепад высот 3 метра - две террасы, летняя зона отдыха с камином.",
   },
   {
-    image: "/images/slide1-4-3.jpg",
+    image: "/images/slide1-4.jpg",
     title: "Проект дачи в Красной Воле",
     description:
       "6 соток, перепад высот 3 метра - две террасы - дом, бассейн с баней и сад.",
   },
   {
-    image: "/images/slide1-4-5.jpg",
+    image: "/images/slide1-5.jpg",
     title: "Мини-отель в Курортном городке",
     description:
       "Кафе, бассейн и дизайн общественной территории",
