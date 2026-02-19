@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { ScrollDownArrow } from "./scroll-down-arrow"
 
 export function HeroSection() {
   const scrollToForm = () => {
@@ -104,6 +105,10 @@ export function HeroSection() {
             Уточнить детали
           </button>
         </div>
+      </div>
+
+      <div className="relative z-10">
+        <ScrollDownArrow />
       </div>
     </section>
   )

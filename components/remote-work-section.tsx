@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle } from "lucide-react"
+import { ScrollDownArrow } from "./scroll-down-arrow"
 
 const items = [
   "Выезд/обмер/фотофиксация — вы получаете материалы и краткий отчёт",
@@ -36,6 +37,8 @@ export function RemoteWorkSection() {
         >
           Получить консультацию
         </button>
+
+        <ScrollDownArrow />
       </div>
     </section>
   )

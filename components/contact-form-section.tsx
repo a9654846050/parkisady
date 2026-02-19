@@ -106,6 +106,12 @@ export function ContactFormSection() {
             </button>
           </form>
         )}
+
+        <div className="mt-16 text-center">
+          <p className="text-sm md:text-base text-muted-foreground/30">
+            Все, приехали. Дальше не крути
+          </p>
+        </div>
       </div>
     </section>
   )
