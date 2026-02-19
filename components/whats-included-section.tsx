@@ -1,6 +1,7 @@
 "use client"
 
 import { Check } from "lucide-react"
+import { ScrollDownArrow } from "./scroll-down-arrow"
 
 const items = [
   "Топосъёмка и точки для разметки на местности",
@@ -57,6 +58,8 @@ export function WhatsIncludedSection() {
             Уточнить детали
           </button>
         </div>
+
+        <ScrollDownArrow />
       </div>
     </section>
   )

@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ScrollDownArrow } from "./scroll-down-arrow"
 
 const projects = [
   {
@@ -139,6 +140,8 @@ export function PortfolioSection() {
             </p>
           </div>
         </div>
+
+        <ScrollDownArrow />
       </div>
     </section>
   )

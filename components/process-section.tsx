@@ -1,3 +1,5 @@
+import { ScrollDownArrow } from "./scroll-down-arrow"
+
 const steps = [
   {
     number: "01",
@@ -65,6 +67,8 @@ export function ProcessSection() {
             </div>
           ))}
         </div>
+
+        <ScrollDownArrow />
       </div>
     </section>
   )

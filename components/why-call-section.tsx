@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react"
+import { ScrollDownArrow } from "./scroll-down-arrow"
 
 const advantages = [
   "Занимаемся строительством ландшафтов, поэтому наши проекты реальны, а не просто картинки",
@@ -30,6 +31,8 @@ export function WhyCallSection() {
             </li>
           ))}
         </ul>
+
+        <ScrollDownArrow />
       </div>
     </section>
   )
