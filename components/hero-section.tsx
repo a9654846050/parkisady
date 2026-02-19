@@ -63,7 +63,7 @@ export function HeroSection() {
             </svg>
           </a>
           <a
-            href="https://max.ru/79654846050"
+            href="https://max.ru/u/f9LHodD0cOJBw7os-b9t3Xay9lHdjqGRDr6VHIfNctwwPEsZd1WBma7pdw4"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в Max Messenger"

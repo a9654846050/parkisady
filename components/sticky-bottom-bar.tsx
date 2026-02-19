@@ -67,7 +67,7 @@ export function StickyBottomBar() {
 
         {/* MAX */}
         <a
-          href="https://max.ru/parkisady"
+          href="https://max.ru/u/f9LHodD0cOJBw7os-b9t3Xay9lHdjqGRDr6VHIfNctwwPEsZd1WBma7pdw4"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 text-[#E8EEF0] hover:text-[#F4C430] transition-colors"
