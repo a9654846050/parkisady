@@ -48,7 +48,7 @@ export function ContactFormSection() {
     <section id="contact-form" className="py-16 md:py-24 px-4 bg-background">
       <div className="max-w-lg mx-auto">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-          Оставьте заявку
+          Давайте обсудим вашу задачу
         </h2>
         <p className="text-muted-foreground mb-10">
           Напишем в мессенджер, не будем отвлекать звонками.

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react"
 import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const objects = [
   {
@@ -80,7 +81,7 @@ export function ObjectsSection() {
         </p>
 
         <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-6">
-          Наши объекты
+          Готовые объекты
         </h3>
 
         {/* Swipeable card */}
@@ -90,8 +91,8 @@ export function ObjectsSection() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {/* Image with counter notch */}
-          <div className="relative aspect-[10/9] overflow-hidden rounded-2xl">
+          {/* Image with counter notch and arrow buttons */}
+          <div className="relative aspect-[5/6] overflow-hidden rounded-2xl">
             <Image
               src={objects[current].image}
               alt={objects[current].title}
@@ -100,6 +101,22 @@ export function ObjectsSection() {
               sizes="(min-width: 768px) 768px, 100vw"
               draggable={false}
             />
+
+            {/* Arrow buttons */}
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1C1C1C] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B8B8E] focus-visible:ring-offset-2"
+              aria-label="Предыдущий объект"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1C1C1C] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B8B8E] focus-visible:ring-offset-2"
+              aria-label="Следующий объект"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
 
             {/* Counter notch in bottom-right */}
             <div className="absolute bottom-0 right-0 flex items-center">

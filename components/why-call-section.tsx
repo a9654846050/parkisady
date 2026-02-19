@@ -9,7 +9,7 @@ const advantages = [
 
 export function WhyCallSection() {
   return (
-    <section className="px-5 py-16 md:px-10 md:py-20">
+    <section className="px-5 py-16 md:px-10 md:py-20 bg-card">
       <div className="mx-auto max-w-3xl">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-3">
           Почему стоит нам позвонить

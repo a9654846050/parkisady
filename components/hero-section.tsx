@@ -11,7 +11,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/IMG_3279.jpg')" }}
+        style={{ backgroundImage: "url('/images/IMG_3279.jpg?v=2')" }}
         role="img"
         aria-label="Ландшафтный проект на склоне в Сочи"
       />

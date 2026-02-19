@@ -2,37 +2,38 @@
 
 import { useState, useCallback, useRef } from "react"
 import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
     image: "/images/project-1.jpg",
-    title: "Террасирование участка на склоне",
+    title: "Проект в Липниках",
     description:
-      "Участок 12 соток, уклон 12\u00b0. Каменные подпорные стены, интегрированный дренаж, газон между террасами.",
+      "10 соток, перепад высот 6 метров. Полный комплект чертежей и визуализация.",
   },
   {
     image: "/images/project-2.jpg",
-    title: "Инженерные системы под ключ",
+    title: "Проект на Космической",
     description:
-      "Участок 8 соток, перепад 6 м. Полный цикл: ливневка, дренаж, подпорные стены, освещение.",
+      "20 соток, перепад высот 16 метров, расположили летнюю кухню, террасы и бассейн.",
   },
   {
     image: "/images/project-3.jpg",
-    title: "Многоуровневый сад с подсветкой",
+    title: "Проект на Ландышевой",
     description:
-      "Участок 15 соток. Подпорные стены из бетона, встроенное освещение, зоны отдыха на каждом уровне.",
+      "5,5 соток, перепад высот 3 метра - две террасы, летняя зона отдыха с камином.",
   },
   {
     image: "/images/project-4.jpg",
-    title: "Благоустройство с зоной отдыха",
+    title: "Проект дачи в Красной Воле",
     description:
-      "Участок 10 соток. Мощёные дорожки, зона барбекю с перголой, декоративный гравий и субтропические посадки.",
+      "6 соток, перепад высот 3 метра - две террасы - дом, бассейн с баней и сад.",
   },
   {
     image: "/images/project-5.jpg",
-    title: "Автополив и озеленение нового участка",
+    title: "Мини-отель в Курортном городке",
     description:
-      "Участок 18 соток, перепад 4 м. Автоматический полив, террасный газон, подпорные стены, LED-освещение дорожек.",
+      "Кафе, бассейн и дизайн общественной территории",
   },
 ]
 
@@ -70,7 +71,7 @@ export function PortfolioSection() {
     <section className="pt-6 pb-16 md:pt-8 md:pb-24 px-5 md:px-10 bg-background">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-10">
-          Наши проекты
+          Наши ландшафтные проекты
         </h2>
 
         {/* Swipeable card */}
@@ -80,8 +81,8 @@ export function PortfolioSection() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {/* Image with counter notch */}
-          <div className="relative aspect-[10/9] overflow-hidden rounded-2xl">
+          {/* Image with counter notch and arrow buttons */}
+          <div className="relative aspect-[5/6] overflow-hidden rounded-2xl">
             <Image
               src={projects[current].image}
               alt={projects[current].title}
@@ -90,6 +91,22 @@ export function PortfolioSection() {
               sizes="(min-width: 768px) 768px, 100vw"
               draggable={false}
             />
+
+            {/* Arrow buttons */}
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1C1C1C] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B8B8E] focus-visible:ring-offset-2"
+              aria-label="Предыдущий проект"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1C1C1C] shadow-lg backdrop-blur-sm transition-all hover:bg-white hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B8B8E] focus-visible:ring-offset-2"
+              aria-label="Следующий проект"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
 
             {/* Counter notch in bottom-right */}
             <div className="absolute bottom-0 right-0 flex items-center">

@@ -15,7 +15,7 @@ export function RemoteWorkSection() {
   }
 
   return (
-    <section className="px-5 pt-16 pb-6 md:px-10 md:pt-20 md:pb-8">
+    <section className="px-5 pt-16 pb-6 md:px-10 md:pt-20 md:pb-8 bg-card">
       <div className="mx-auto max-w-3xl">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-10">
           Сделаем проект без вашего присутствия на участке:
