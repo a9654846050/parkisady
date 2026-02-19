@@ -71,7 +71,7 @@ export function PortfolioSection() {
     <section className="pt-6 pb-16 md:pt-8 md:pb-24 px-5 md:px-10 bg-background">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-10">
-          Наши проекты
+          Наши ландшафтные проекты
         </h2>
 
         {/* Swipeable card */}
