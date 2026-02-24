@@ -5,6 +5,7 @@ import { Send } from "lucide-react"
 
 export function ContactFormSection() {
   const [name, setName] = useState("")
+  const [message, setMessage] = useState("")
   const [phone, setPhone] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -13,7 +14,7 @@ export function ContactFormSection() {
     e.preventDefault()
     if (!name.trim() || !phone.trim()) return
 
-    console.log('[v0] Form submit started', { name, phone })
+    console.log('[v0] Form submit started', { name, message, phone })
     setIsSubmitting(true)
 
     try {
@@ -23,7 +24,7 @@ export function ContactFormSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone }),
+        body: JSON.stringify({ name, message, phone }),
       })
 
       console.log('[v0] Response status:', response.status)
@@ -80,6 +81,19 @@ export function ContactFormSection() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-shadow"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
+                Сообщение
+              </label>
+              <textarea
+                id="message"
+                rows={4}
+                placeholder="Любая информация которую Вы пожелаете сообщить"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-shadow resize-none"
               />
             </div>
             <div>
