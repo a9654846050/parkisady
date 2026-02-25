@@ -10,11 +10,14 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/back.webp')" }}
-        role="img"
-        aria-label="Ландшафтный проект на склоне в Сочи"
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/images/Untitled3459835.mov"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
       />
       <div className="absolute inset-0 bg-[#1A4D4D]/70" />
 
