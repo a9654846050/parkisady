@@ -16,7 +16,7 @@ export async function POST(request: Request) {
       to: ['a9654846050@gmail.com'],
       subject: `Новая заявка от ${name}`,
       html: `
-        <h2>Новая заявка с сайта</h2>
+        <h2>Новая заявка с сайта parkisady.ru</h2>
         <p><strong>Имя:</strong> ${name}</p>
         <p><strong>Телефон:</strong> ${phone}</p>
         ${message ? `<p><strong>Сообщение:</strong> ${message}</p>` : ''}
@@ -24,13 +24,11 @@ export async function POST(request: Request) {
     })
 
     if (error) {
-      console.error('[v0] Resend error:', error)
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
 
     return NextResponse.json({ success: true, id: data?.id })
   } catch (err) {
-    console.error('[v0] Server error:', err)
     return NextResponse.json({ error: 'Внутренняя ошибка сервера' }, { status: 500 })
   }
 }
