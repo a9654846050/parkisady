@@ -7,12 +7,15 @@ export function ContactFormSection() {
   const [name, setName] = useState("")
   const [message, setMessage] = useState("")
   const [phone, setPhone] = useState("")
+  const [consent, setConsent] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const isFormValid = name.trim() !== "" && phone.trim() !== "" && consent
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name.trim() || !phone.trim()) return
+    if (!isFormValid) return
 
     console.log('[v0] Form submit started', { name, message, phone })
     setIsSubmitting(true)
@@ -110,10 +113,44 @@ export function ContactFormSection() {
                 className="w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-shadow"
               />
             </div>
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#F4C430]"
+              />
+              <span className="text-sm text-muted-foreground leading-relaxed">
+                Я даю согласие на{" "}
+                <a
+                  href="/doc/soglasie.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 text-foreground hover:text-[#F4C430] transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  обработку персональных данных
+                </a>{" "}
+                и ознакомлен(а) с{" "}
+                <a
+                  href="/doc/politika.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 text-foreground hover:text-[#F4C430] transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Политикой обработки персональных данных
+                </a>
+              </span>
+            </label>
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F4C430] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!isFormValid || isSubmitting}
+              className={`mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                isFormValid && !isSubmitting
+                  ? "bg-[#F4C430] text-[#1C1C1C] hover:bg-[#F4C430]/90 focus-visible:ring-[#F4C430] cursor-pointer"
+                  : "bg-muted text-muted-foreground cursor-not-allowed"
+              }`}
             >
               <Send className="h-4 w-4" />
               {isSubmitting ? 'Отправка...' : 'Напишите мне'}
