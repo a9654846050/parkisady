@@ -37,7 +37,8 @@ export async function POST(request: Request) {
   )
 
   if (!response.ok) {
-    return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
+    const detail = await response.text()
+    return NextResponse.json({ error: 'Failed to send message', detail }, { status: 500 })
   }
 
   return NextResponse.json({ success: true })
