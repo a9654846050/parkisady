@@ -13,6 +13,22 @@ export function SiteFooter() {
             <p className="text-sm leading-relaxed">
               ИНН 2367023503
             </p>
+            <a
+              href="/doc/soglasie.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm mt-2 hover:text-[#F4C430] transition-colors underline underline-offset-2"
+            >
+              Согласие на обработку персональных данных
+            </a>
+            <a
+              href="/doc/politika.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm mt-1 hover:text-[#F4C430] transition-colors underline underline-offset-2"
+            >
+              Политика конфиденциальности
+            </a>
           </div>
 
           {/* Contact */}
