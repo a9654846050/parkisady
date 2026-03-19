@@ -7,7 +7,6 @@ export async function POST(request: Request) {
   const chatId = process.env.MAX_CHAT_ID
 
   if (!token || !chatId) {
-    console.error('[v0] Missing MAX bot credentials')
     return NextResponse.json({ error: 'Missing bot credentials' }, { status: 500 })
   }
 
@@ -38,8 +37,6 @@ export async function POST(request: Request) {
   )
 
   if (!response.ok) {
-    const err = await response.text()
-    console.error('[v0] Max API error:', err)
     return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
   }
 
